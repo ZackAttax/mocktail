@@ -17,12 +17,4 @@ defmodule Mocktail.CpiSupervisor do
   def fetch_breed(state) do
     DynamicSupervisor.start_child(__MODULE__, {CpiServer, state})
   end
-
-  # def temperment_gen_server(temperment) do
-  #   DynamicSupervisor.start_child(__MODULE__, {TempermentServer, state})
-  # end
-
-  # def breed_gen_server(breed) do
-  #   DynamicSupervisor.start_child(__MODULE__, {BreedServer, state})
-  # end
 end

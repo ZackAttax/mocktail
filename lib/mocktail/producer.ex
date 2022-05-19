@@ -34,9 +34,7 @@ defmodule Mocktail.Producer do
       ) do
     new_breeds = breeds ++ breed
     new_remaining_breeds = remaining_breeds - 1
-    IO.inspect(new_remaining_breeds, label: "CAST")
     length = length(breeds_to_get)
-    IO.inspect(length, label: "BREEDS TO GET")
 
     state
     |> Map.put(:breeds, new_breeds)

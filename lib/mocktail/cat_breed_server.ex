@@ -2,28 +2,32 @@ defmodule Mocktail.CatBreedServer do
   use GenServer
 
   def start_link(_) do
-    GenServer.start_link(__MODULE__, :ok)
+    GenServer.start_link(__MODULE__, %{}, name: __MODULE__)
   end
 
-  def init(_state) do
-    {:ok, %{}}
+  def init(state) do
+    {:ok, state}
   end
 
-  def handle_cast(:add_cat, %{breed: breed, cat_name: cat_name}, state) do
+  def get(breed) do
+    GenServer.call(__MODULE__, {:get_breed, breed})
+  end
+
+  def handle_cast({:add_cat, %{breed: breed, cat_name: cat_name}}, state) do
     new_state =
       state
-      |> Map.update(breed, [], fn cats ->
-        cats ++ cat_name
+      |> Map.update(breed, [cat_name], fn cats ->
+        cats ++ [cat_name]
       end)
+      |> IO.inspect()
 
     {:noreply, new_state}
   end
 
-  # def create_cat_map(%{temperment: temperments, cat_name: cat_name}) do
-  #     temperments
-  #     |> Enum.reduce(%{}, fn temperment, map ->
-  #       map
-  #       |> Map.merge(%{temperment => cat_name})
-  #     end)
-  # end
+  def handle_call({:get_breed, breed}, _from, state) do
+    reply = state[breed]
+    {:reply, reply, state}
+  end
 end
+
+# Mocktail.CatBreedServer.get_breed("Abyssinian")

@@ -25,6 +25,6 @@ defmodule Mocktail.Name do
     adjective = @adjectives |> Enum.random()
     noun = @nouns |> Enum.random()
 
-    [adjective, noun, breed] |> Enum.join("-")
+    [breed, adjective, noun] |> Enum.join("-")
   end
 end
