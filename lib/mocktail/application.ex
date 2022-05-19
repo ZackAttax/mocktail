@@ -10,6 +10,21 @@ defmodule Mocktail.Application do
     children = [
       # Starts a worker by calling: Mocktail.Worker.start_link(arg)
       # {Mocktail.Worker, arg}
+      {Registry, keys: :unique, name: CatFanciersRegistry},
+      {DynamicSupervisor, name: Mocktail.CpiSupervisor, strategy: :one_for_one},
+      {Mocktail.Producer, :ok},
+      {Mocktail.ProducerConsumer, :ok},
+      {Mocktail.Consumer, :ok},
+      {Mocktail.TemperamentServer, :ok},
+      {Mocktail.CatBreedServer, :ok}
+      # %{
+      #   id: 1,
+      #   start: {Mocktail.Consumer, :start_link, [[]]}
+      # },
+      # %{
+      #   id: 2,
+      #   start: {Mocktail.Consumer, :start_link, [[]]}
+      # }
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
