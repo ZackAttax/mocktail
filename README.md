@@ -1,6 +1,16 @@
 # Mocktail
 
-**TODO: Add description**
+**Description**
+This is a learning excercise to practice what I have learned in Elixir using Gen Servers Producers, Producer/Consumers, and Consumers
+with an external API.
+
+The app is given a list of breeds and different types of temperments.
+
+The breeds are then filtered by temp based on info from the external API
+
+If the breed falls within the temperment attribute it downloads a picture of the cat.
+
+You then have a collection of cat pics with the desired temperment!
 
 ## Installation
 
