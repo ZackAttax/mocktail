@@ -4,13 +4,25 @@
 This is a learning excercise to practice what I have learned in Elixir using Gen Servers Producers, Producer/Consumers, and Consumers
 with an external API.
 
-The app is given a list of breeds and different types of temperments.
+The app is given a list of breeds and different types of temperaments.
 
-The breeds are then filtered by temp based on info from the external API
+The breeds are then filtered by temperament based on info from the external API
 
 If the breed falls within the temperment attribute it downloads a picture of the cat.
 
 You then have a collection of cat pics with the desired temperment!
+
+**Instructions**
+install Erlang 25.2.1          
+Install Elixir 1.14
+
+Clone repo from Github along with https://github.com/maxx-coffee/catapi into a neighboring folder
+get an api key from https://thecatapi.com/#pricing and place it in the catapi repo
+run `mix deps.get`
+
+start the app with `iex -S mix`
+
+
 
 ## Installation
 
