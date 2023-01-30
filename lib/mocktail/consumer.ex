@@ -1,8 +1,13 @@
 defmodule Mocktail.Consumer do
+  @moduledoc """
+  This where cats are named, assigned to temperament GenServers,
+  assigned to breed GenServer, and pictures sent to the pic GenServ
+  """
   use GenStage
   alias Mocktail.Name
   alias Mocktail.TemperamentServer
   alias Mocktail.CatBreedServer
+  alias Mocktail.PicServer
 
   def start_link(_initial) do
     GenStage.start_link(__MODULE__, :state)
@@ -48,14 +53,13 @@ defmodule Mocktail.Consumer do
     %HTTPoison.Response{body: body} = HTTPoison.get!(url)
 
     body
-    |> save_cat(cat_name)
+    |> send_to_pic_server(cat_name)
 
     ctx
   end
 
-  defp save_cat(pic, name) do
-    path = "./cat_pics/#{name}.jpeg"
-    File.write(path, pic)
+  defp send_to_pic_server(pic, cat_name) do
+    GenServer.cast(PicServer, {:add_cat, %{pic: pic, cat_name: cat_name}})
   end
 
   defp send_to_temperament_gen_server(%{temperaments: temperaments, cat_name: cat_name} = ctx) do

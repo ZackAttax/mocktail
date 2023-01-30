@@ -15,6 +15,7 @@ You then have a collection of cat pics with the desired temperment!
 **Instructions**
 install Erlang 25.2.1          
 Install Elixir 1.14
+I use asdf to manage my versions https://asdf-vm.com/guide/getting-started.html
 
 Clone repo from Github along with https://github.com/maxx-coffee/catapi into a neighboring folder
 get an api key from https://thecatapi.com/#pricing and place it in the catapi repo

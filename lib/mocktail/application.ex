@@ -11,7 +11,8 @@ defmodule Mocktail.Application do
       {Mocktail.ProducerConsumer, :ok},
       {Mocktail.Consumer, :ok},
       {Mocktail.TemperamentServer, :ok},
-      {Mocktail.CatBreedServer, :ok}
+      {Mocktail.CatBreedServer, :ok},
+      {Mocktail.PicServer, :ok}
     ]
 
     opts = [strategy: :one_for_one, name: Mocktail.Supervisor]
