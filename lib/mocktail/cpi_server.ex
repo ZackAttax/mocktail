@@ -1,4 +1,8 @@
 defmodule Mocktail.CpiServer do
+  @moduledoc """
+  This is a GenServer to make a calls the external API
+  https://thecatapi.com/
+  """
   use GenServer, restart: :temporary
   alias Mocktail.Producer
 

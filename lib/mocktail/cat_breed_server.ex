@@ -19,7 +19,9 @@ defmodule Mocktail.CatBreedServer do
       |> Map.update(breed, [cat_name], fn cats ->
         cats ++ [cat_name]
       end)
-      |> IO.inspect()
+
+      state
+      |> print_breeds_if_new(new_state, breed)
 
     {:noreply, new_state}
   end
@@ -27,6 +29,14 @@ defmodule Mocktail.CatBreedServer do
   def handle_call({:get_breed, breed}, _from, state) do
     reply = state[breed]
     {:reply, reply, state}
+  end
+
+  defp print_breeds_if_new(state_keys, new_state, breed) do
+    unless state_keys |> Map.has_key?(breed) do
+      new_state
+      |> Map.keys()
+      |> IO.inspect(label: "Breeds Available:")
+    end
   end
 end
 

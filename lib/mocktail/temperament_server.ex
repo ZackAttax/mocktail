@@ -9,7 +9,7 @@ defmodule Mocktail.TemperamentServer do
     {:ok, %{}}
   end
 
-  @spec get(string()) :: list()
+  @spec get(String.t()) :: list()
   def get(temperament) do
     GenServer.call(__MODULE__, {:get, temperament})
   end
@@ -20,7 +20,9 @@ defmodule Mocktail.TemperamentServer do
       |> Map.update(temperament, [cat_name], fn cats ->
         cats ++ [cat_name]
       end)
-      |> IO.inspect()
+
+      state
+      |> print_temperament_if_new(new_state, temperament)
 
     {:noreply, new_state}
   end
@@ -30,6 +32,12 @@ defmodule Mocktail.TemperamentServer do
 
     {:reply, reply, state}
   end
-end
 
-#  Mocktail.TemperamentServer.get("Loving")
+  defp print_temperament_if_new(state_keys, new_state, temperament) do
+    unless state_keys |> Map.has_key?(temperament) do
+      new_state
+      |> Map.keys()
+      |> IO.inspect(label: "Temperments Available:")
+    end
+  end
+end
