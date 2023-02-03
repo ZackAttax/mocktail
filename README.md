@@ -42,3 +42,5 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/mocktail](https://hexdocs.pm/mocktail).
 
+ breed = "Bambino"
+ Mocktail.get_breed(breed)

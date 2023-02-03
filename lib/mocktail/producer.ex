@@ -14,7 +14,7 @@ defmodule Mocktail.Producer do
       breeds: [],
       demand: 0,
       breeds_to_get: BreedList.get(),
-      request: 4,
+      request: 50,
       remaining_breeds: get_remaining_breeds()
     }
 
@@ -32,9 +32,8 @@ defmodule Mocktail.Producer do
         %{breeds: breeds, remaining_breeds: remaining_breeds, breeds_to_get: breeds_to_get} =
           state
       ) do
-    new_breeds = breeds ++ breed
+    new_breeds = breeds ++ [breed]
     new_remaining_breeds = remaining_breeds - 1
-    length = length(breeds_to_get)
 
     state
     |> Map.put(:breeds, new_breeds)
