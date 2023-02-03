@@ -14,7 +14,7 @@ defmodule Mocktail.Producer do
       breeds: [],
       demand: 0,
       breeds_to_get: BreedList.get(),
-      request: 50,
+      request: 4,
       remaining_breeds: get_remaining_breeds()
     }
 

@@ -48,6 +48,7 @@ defmodule Mocktail.Consumer do
   end
 
   defp get_cat_lady_pic(%{id: id, cat_name: cat_name} = ctx) do
+    IO.inspect({id, cat_name}, label: "CONSUMER")
     url = "https://cdn2.thecatapi.com/images/#{id}.jpg"
 
     %HTTPoison.Response{body: body} = HTTPoison.get!(url)

@@ -22,7 +22,9 @@ defmodule Mocktail.CpiServer do
   @spec handle_continue({:start_fetch}, %{:breed => any, optional(any) => any}) ::
           {:stop, :normal, any}
   def handle_continue(:start_fetch, %{breed: breed} = state) do
+    breed
     get_cat_breed(breed)
+    |> IO.inspect(label: "HERE")
     |> handle_response(state)
   end
 
