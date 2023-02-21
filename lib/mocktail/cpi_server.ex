@@ -5,6 +5,7 @@ defmodule Mocktail.CpiServer do
   """
   use GenServer, restart: :temporary
   alias Mocktail.Producer
+  alias Cat.Api
 
   def start_link(breed) do
     GenServer.start_link(__MODULE__, %{breed: breed})
@@ -32,7 +33,7 @@ defmodule Mocktail.CpiServer do
   end
 
   def get_cat_breed(breed) do
-    Dummyio.get_breeds(breed)
+    Api.get_breeds(breed)
   end
 
   def terminate(_, _), do: nil
