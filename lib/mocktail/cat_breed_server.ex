@@ -35,7 +35,7 @@ defmodule Mocktail.CatBreedServer do
     unless state_keys |> Map.has_key?(breed) do
       new_state
       |> Map.keys()
-      |> IO.inspect(label: "Breeds Available:")
+      |> IO.inspect(label: "Breeds Available")
     end
   end
 end

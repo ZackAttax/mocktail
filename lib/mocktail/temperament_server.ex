@@ -37,7 +37,7 @@ defmodule Mocktail.TemperamentServer do
     unless state_keys |> Map.has_key?(temperament) do
       new_state
       |> Map.keys()
-      |> IO.inspect(label: "Temperments Available:")
+      |> IO.inspect(label: "Temperments Available")
     end
   end
 end

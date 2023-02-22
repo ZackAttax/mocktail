@@ -4,7 +4,6 @@ defmodule Cat.Api do
 
   def get_breeds(breed_id) do
 
-
     Client.get("/breeds/#{breed_id}")
     |> process_response()
   end
