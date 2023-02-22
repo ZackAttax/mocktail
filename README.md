@@ -22,7 +22,7 @@ the name as a key, the cats temparement and name is sent to the [temparment_serv
 (lib/mocktail/temperament_server.ex) here the cats name is stored in a list under the 
 keys of its temperaments, and finally the name and breed are sent to the
 [cat_breed_server](lib/mocktail/cat_breed_server.ex) where the name of the cat is 
-stored in a list under the xkey of the cat breed.
+stored in a list under the key of the cat breed.
 
 While this is happening a list of available breeds and temperaments are printed in the
 console.
