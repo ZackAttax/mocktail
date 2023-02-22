@@ -19,10 +19,10 @@ The [consumer](lib/mocktail/consumer.ex) then generates a name for the cat, gets
 temperaments of the cat, full breed name, and downloads a picture. The cat picture is
 sent to the [pic_server](lib/mocktail/pic_server.ex) where it is stored in a map with
 the name as a key, the cats temparement and name is sent to the [temparment_server]
-(lib/mocktail/temperament_server.ex) here the cats name is stored under its 
-temperaments, and finally the name and breed are sent to the [cat_breed_server](lib/
-mocktail/cat_breed_server.ex) where the name of the cat is stored in a list under the 
-key of the cat breed.
+(lib/mocktail/temperament_server.ex) here the cats name is stored in a list under the 
+keys of its temperaments, and finally the name and breed are sent to the
+[cat_breed_server](lib/mocktail/cat_breed_server.ex) where the name of the cat is 
+stored in a list under the xkey of the cat breed.
 
 While this is happening a list of available breeds and temperaments are printed in the
 console.
