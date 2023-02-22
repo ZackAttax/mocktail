@@ -18,10 +18,6 @@ defmodule Mocktail.PicServer do
       state
       |> Map.put(cat_name, pic)
 
-      # new_state
-      # |> Map.keys()
-      # |> IO.inspect(label: "Cats with pictures:")
-
     {:noreply, new_state}
   end
 
@@ -30,5 +26,3 @@ defmodule Mocktail.PicServer do
     {:reply, reply, state}
   end
 end
-
-# Mocktail.PicServer.get_breed("Abyssinian")
