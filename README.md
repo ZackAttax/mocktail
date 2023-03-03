@@ -45,14 +45,18 @@ to /cat_pics
 
 `Mocktail.get_pic_of/1` takes a cat's name and downloads pictures to /cat_pics
 
-**Instructions**
+# Instructions
 
 I use [asdf](https://asdf-vm.com/guide/getting-started.html) to manage my versions of Elixir and Erlang(among others)
-Install Erlang 25.2.1          
+
+Install Erlang 25.2.1
+
 Install Elixir 1.14
 
 clone the repo from Github
-get an api key from https://thecatapi.com/#pricing and place it in the catapi repo
+
+get an api key from https://thecatapi.com/#pricing
+
 run `mix deps.get`
 
 start the app with `API_KEY=(your api key here) iex -S mix`
