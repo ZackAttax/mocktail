@@ -7,6 +7,8 @@ Servers Producers, Producer/Consumers, and Consumers
 with an external API. Using these tools the aim is to download pictures of smart 
 active cats!
 
+![App Flow Chart](assets/cat_api.jpeg)
+
 The app is given a [list of breeds](lib/mocktail/breed_list.ex) 
 
 The [producer](lib/mocktail/producer.ex) pulls from this list and passes them to the 
