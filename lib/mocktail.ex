@@ -37,7 +37,6 @@ defmodule Mocktail do
     |> Enum.map(fn cat_name ->
       cat_name
       |> get_pic_of()
-      |> save_cat(cat_name)
     end)
   end
 
@@ -48,5 +47,6 @@ defmodule Mocktail do
 
   def get_pic_of(cat_name) do
    PicServer.get(cat_name)
+   |> save_cat(cat_name)
   end
 end
