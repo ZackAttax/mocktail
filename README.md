@@ -9,7 +9,7 @@ active cats!
 
 ![App Flow Chart](assets/cat_api.jpeg)
 
-The app is given a [list of breeds](lib/mocktail/breed_list.ex) 
+The app is given a [list of cat breeds](lib/mocktail/breed_list.ex) 
 
 The [producer](lib/mocktail/producer.ex) pulls from this list and passes them to the 
 producer_consumer
