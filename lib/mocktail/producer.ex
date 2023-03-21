@@ -32,6 +32,7 @@ defmodule Mocktail.Producer do
         %{breeds: breeds, remaining_breeds: remaining_breeds, breeds_to_get: breeds_to_get} =
           state
       ) do
+    Process.send_after(self(), :request, 60_000)
     new_breeds = breeds ++ [breed]
     new_remaining_breeds = remaining_breeds - 1
 
@@ -96,7 +97,6 @@ defmodule Mocktail.Producer do
   end
 
   def fetch_breed(breed) do
-    Process.send_after(self(), :request, 60_000)
     CpiServer.start_link(breed)
   end
 
