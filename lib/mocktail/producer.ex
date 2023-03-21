@@ -29,7 +29,7 @@ defmodule Mocktail.Producer do
 
   def handle_cast(
         {:add_breed, breed},
-        %{breeds: breeds, remaining_breeds: remaining_breeds, breeds_to_get: breeds_to_get} =
+        %{breeds: breeds, remaining_breeds: remaining_breeds} =
           state
       ) do
     Process.send_after(self(), :request, 60_000)
